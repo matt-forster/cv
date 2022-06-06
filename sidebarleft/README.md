@@ -1,1 +1,4 @@
-Thanks to Ilya Rumyantsev for providing the layout idea and the content credentials for this template.
+
+# install
+
+> sudo apt-get install texlive-base texlive-latex-recommended texlive-latex-extra texlive-fonts-extra

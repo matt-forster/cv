@@ -9,7 +9,7 @@
 %	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 %	copies of the Software, and to permit persons to whom the Software is
 %	furnished to do so, subject to the following conditions:
-%	
+%
 %	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 %	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 %	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -17,7 +17,7 @@
 %	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %	THE SOFTWARE.
-%	
+%
 %
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 
@@ -29,7 +29,7 @@
 %============================================================================%
 
 %we use article class because we want to fully customize the page and don't use a cv template
-\documentclass[10pt,A4]{article}	
+\documentclass[10pt,A4]{article}
 
 
 %----------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@
 %----------------------------------------------------------------------------------------
 
 % we use utf8 since we want to build from any machine
-\usepackage[utf8]{inputenc}		
+\usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	LOGIC
@@ -59,10 +59,10 @@
 %\usepackage{fetamont}
 %\usepackage[default]{gillius}
 %\usepackage[light,math]{iwona}
-%\usepackage[thin]{roboto} 
+%\usepackage[thin]{roboto}
 
 % set font default
-\renewcommand*\familydefault{\sfdefault} 	
+\renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 
 % more font size definitions
@@ -70,7 +70,7 @@
 
 %----------------------------------------------------------------------------------------
 %	FONT AWESOME ICONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 % include the fontawesome icon set
 \usepackage{fontawesome}
@@ -87,22 +87,22 @@
 \setbox0=\hbox{#1}\parbox{\wd0}{\box0}\endgroup}
 
 % icon shortcut
-\newcommand{\icon}[3] { 							
+\newcommand{\icon}[3] {
 	\makebox(#2, #2){\textcolor{maincol}{\csname fa#1\endcsname}}
-}	
+}
 
 % icon with text shortcut
-\newcommand{\icontext}[4]{ 						
+\newcommand{\icontext}[4]{
 	\vcenteredhbox{\icon{#1}{#2}{#3}}  \hspace{2pt}  \parbox{0.9\mpwidth}{\textcolor{#4}{#3}}
 }
 
 % icon with website url
-\newcommand{\iconhref}[5]{ 						
+\newcommand{\iconhref}[5]{
     \vcenteredhbox{\icon{#1}{#2}{#5}}  \hspace{2pt} \href{#4}{\textcolor{#5}{#3}}
 }
 
 % icon with email link
-\newcommand{\iconemail}[5]{ 						
+\newcommand{\iconemail}[5]{
     \vcenteredhbox{\icon{#1}{#2}{#5}}  \hspace{2pt} \href{mailto:#4}{\textcolor{#5}{#3}}
 }
 
@@ -111,7 +111,7 @@
 %----------------------------------------------------------------------------------------
 
 % page outer frames (debug-only)
-% \usepackage{showframe}		
+% \usepackage{showframe}
 
 % we use paracol to display breakable two columns
 \usepackage{paracol}
@@ -133,7 +133,7 @@
 
 %----------------------------------------------------------------------------------------
 %	TABLE /ARRAY DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 % extended aligning of tabular cells
 \usepackage{array}
@@ -146,7 +146,7 @@
 
 %----------------------------------------------------------------------------------------
 %	GRAPHICS DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 %for header image
 \usepackage{graphicx}
@@ -154,30 +154,30 @@
 % use this for floating figures
 % \usepackage{wrapfig}
 % \usepackage{float}
-% \floatstyle{boxed} 
+% \floatstyle{boxed}
 % \restylefloat{figure}
 
-%for drawing graphics		
-\usepackage{tikz}				
+%for drawing graphics
+\usepackage{tikz}
 \usetikzlibrary{shapes, backgrounds,mindmap, trees}
 
 %----------------------------------------------------------------------------------------
 %	Color DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 \usepackage{transparent}
 \usepackage{color}
 
 % primary color
-\definecolor{maincol}{RGB}{ 225, 0, 0 }
+\definecolor{maincol}{RGB}{ 94, 129, 172 }
 
 % accent color, secondary
 % \definecolor{accentcol}{RGB}{ 250, 150, 10 }
 
 % dark color
-\definecolor{darkcol}{RGB}{ 70, 70, 70 }
+\definecolor{darkcol}{RGB}{ 59, 66, 82 }
 
 % light color
-\definecolor{lightcol}{RGB}{245,245,245}
+\definecolor{lightcol}{RGB}{ 229, 233, 240 }
 
 
 % Package for links, must be the last package used
@@ -187,7 +187,7 @@
 % to keep padding included in width calculations
 % can also be used for other boxes / environments
 \newcommand{\mpwidth}{\linewidth-\fboxsep-\fboxsep}
-	
+
 
 
 %============================================================================%
@@ -244,7 +244,7 @@
 	\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
  		\textcolor{black}{\textbf{#1}} & \textcolor{maincol}{#2}\\
 	\end{tabular*}%
-	
+
 	\hspace{4pt}
 	\begin{tikzpicture}[scale=1,rounded corners=2pt,very thin]
 		\fill [lightcol] (0,0) rectangle (1\mpwidth, 0.15);
@@ -269,7 +269,7 @@
 % param 6: technologies include (optional)
 % param 7: achievements (optional)
 \newcommand{\cvevent}[7] {
-	
+
 	% we wrap this part in a parbox, so title and description are not separated on a pagebreak
 	% if you need more control on page breaks, remove the parbox
 	\parbox{\mpwidth}{
@@ -277,7 +277,7 @@
 	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.25\mpwidth]{\textcolor{white}{#1}}} \\
 			\textcolor{maincol}{\textbf{#3}} & \\
 		\end{tabular*}\\[8pt]
-	
+
 		\ifthenelse{\isempty{#4}}{}{
 			\cvtext{#4}\\
 		}
@@ -285,18 +285,19 @@
 
 	\ifthenelse{\isempty{#5}}{}{
 		\vspace{9pt}
+		\cvtext{\textbf{Impacts:}}\\
 		{#5}
 	}
 
 	\ifthenelse{\isempty{#6}}{}{
 		\vspace{9pt}
-		\cvtext{\textbf{Technologies include:}}\\
+		\cvtext{\textbf{Responsibilities:}}\\
 		{#6}
 	}
 
 	\ifthenelse{\isempty{#7}}{}{
 		\vspace{9pt}
-		\cvtext{\textbf{Achievements include:}}\\
+		\cvtext{\textbf{Technologies \& Tools:}}\\
 		{#7}
 	}
 	\vspace{14pt}
@@ -333,7 +334,7 @@
 % param 1: percent width, from 0 to 1
 \newcommand{\cvqrcode}[1] {
 	\begin{center}
-		\includegraphics[width={#1}\mpwidth]{qrcode}
+		\includegraphics[width={#1}\mpwidth]{qr-code}
 	\end{center}
 }
 
@@ -357,40 +358,56 @@
 %---------------------------------------------------------------------------------------
 %	META IMAGE
 %----------------------------------------------------------------------------------------
-\includegraphics[width=\linewidth]{untitled.jpg}	%trimming relative to image size
+% \includegraphics[width=\linewidth]{untitled.jpg}	%trimming relative to image size
 
 %---------------------------------------------------------------------------------------
 %	META SKILLS
 %----------------------------------------------------------------------------------------
 \cvsection{SKILLS}
 
-\cvskill{Python} {5+ yrs} {1} \\[-2pt]
+\cvskill{Systems Design} {5+ yrs} {0.8} \\[-2pt]
 
-\cvskill{Ansible} {5+ yrs} {1} \\[-2pt]
+\cvskill{API Design \& SRE} {6+ yrs} {1} \\[-2pt]
 
-\cvskill{Linux} {5+ yrs} {1} \\[-2pt]
+\cvskill{Database Design} {6+ yrs} {0.9} \\[-2pt]
 
-\cvskill{Open Source Tools} {5+ yrs} {1} \\[-2pt]
+\cvskill{Terraform \& IaC} {6 yrs} {0.85} \\[-2pt]
 
-\cvskill{Django} {5+ yrs} {0.8} \\[-2pt]
+\cvskill{DevOps \& Delivery} {5 yrs} {0.75} \\[-2pt]
 
-\cvskill{Html/CSS} {3+ yrs} {0.72} \\[-2pt]
+\cvskill{Technical Leadership} {4 yrs} {0.7} \\[-2pt]
 
-\cvskill{Javascript} {3+ yrs} {0.69} \\[-2pt]
+\cvsection{TOOLS}
 
-\cvskill{GIT} {3+ yrs} {1} \\[-2pt]
+\cvskill{Javascript/TypeScript} {7+ yrs} {1} \\[-2pt]
 
+\cvskill{Git \& Github} {7+ yrs} {1} \\[-2pt]
+
+\cvskill{SQL} {7+ yrs} {1} \\[-2pt]
+
+\cvskill{Terraform \& Packer} {6 yrs} {0.9} \\[-2pt]
+
+\cvskill{AWS} {6 yrs} {0.75} \\[-2pt]
+
+\cvskill{Unix OS} {10+ yrs} {0.8} \\[-2pt]
+
+\cvskill{Docker} {6 yrs} {0.7} \\[-2pt]
+
+\cvskill{Go} {1 yrs} {0.4} \\[-2pt]
+
+\cvskill{HTML/CSS} {4+ yrs} {0.7} \\[-2pt]
+
+\cvskill{C++} {8+ yrs} {0.6} \\[-2pt]
 
 
 \vfill\null
 \cvsection{CONTACT}
-	
-\icontext{MapMarker}{12}{Example St. 1\\12345 Somewhere}{black}\\[6pt]
-\icontext{MobilePhone}{12}{+49 178 910 11 12 13}{black}\\[6pt]
-\iconemail{Envelope}{12}{contact@example.com}{contact@example.com}{black}\\[6pt]
+
+\icontext{MapMarker}{12}{683 Keystone Chase W\\Lethbridge, AB, Canada}{black}\\[6pt]
+\icontext{MobilePhone}{12}{+1 403 360 9654}{black}\\[6pt]
+\iconemail{Envelope}{12}{hey@mattforster.ca}{hey@mattforster.ca}{black}\\[6pt]
 
 \vfill\null
-\cvqrcode{0.7}
 
 %---------------------------------------------------------------------------------------
 %	EDUCATION
@@ -399,20 +416,20 @@
 \cvsection{EDUCATION}
 
 \cvmetaevent
-{2009 - 2011}
-{M. Sc. Physics.}
-{Universität Bonn}
-{Main thematic priority of those master studies was numerical time series analysis of non-linear dynamical systems. Besides data analysis and transformation, great importance was attached to fast algorithms and efficient software architecture.
-
-In the master thesis a numerical approach for the detection of the direction of interaction was proposed. Analysis of this new approach was performed with the help computer simulations to find out its limits and to compare it to another commonly used approaches.
-
-This numerical approach was highly optimised for cluster computing and implemented in c++ . For those purposes a distributed computing cluster had to be set up and administrated.}
+{2013 - 2017}
+{B. Sc. Computer Science}
+{University of Lethbridge}
+{
+  Focus on software engineering and design. Co-operative education certification in cooperation with Agriculture and Agri-Food Canada.
+  Completed a research project on the design and implementation of a web-based LIMS for the management of Culture Collection and Sample Annotations.
+  https://github.com/matt-forster/LIIS
+}
 
 \cvmetaevent
 {2006 - 2009}
-{B. Sc. Physics.}
-{Universität Bonn}
-{The topic for the bachelor's thesis was 'Feshbach resonance'. A numerical application was built to calculate the diagrams.}
+{Diploma, Computer Information Technology}
+{Lethbridge College}
+{Graduated with Honors. College Diploma with a business orientation.}
 
 \vfill\null
 \cvqrcode{0.7}
@@ -420,41 +437,41 @@ This numerical approach was highly optimised for cluster computing and implement
 %---------------------------------------------------------------------------------------
 %	CERTIFICATION
 %----------------------------------------------------------------------------------------
-\newpage
-\cvsection{CERTIFICATIONS}
+% \newpage
+% \cvsection{CERTIFICATIONS}
 
-\cvmetaevent
-{LPIC 1 - Linux administrator}
-{}
-{}
-{Certificate issued by the Linux Professional Institute to prove abilities in Linux administration}
+% \cvmetaevent
+% {In Progress}
+% {AWS Solutions Architect}
+% {}
+% {
+%   Starting with AWS Developer associate, I have started down the path of completing the official
+%   solution architecture certification provided by AWS by the end of Q3 2022.
+% }
 
-\cvmetaevent
-{IBM InfoSphere Advanced DataStage Essentials}
-{}
-{}
-{Intense course about the ETL technologies and the use of IBM DataStage.}
+% \cvmetaevent
+% {In Progress}
+% {Azure Solutions Architect}
+% {}
+% {
+%   Starting with Azure Fundamentals, I have started down the path of completing the official
+%   solution architecture certification provided by Azure by the end of Q3 2022.
+% }
 
-\cvmetaevent
-{Jump Start Program}
-{}
-{}
-{Two months full-time training in object oriented programming in Java SE/EE, software development, testing and modern enterprise web-frameworks. Other topics were object oriented design patterns, test-driven development, SQL-databases and webservers in Java environment (Tomcat / Glasfish / JBoss / Jety)}
+% \cvmetaevent
+% {Online Classes}
+% {}
+% {}
+% {
+%   It is important to me to stay up to date with the newest topics in the field of software development.
+%   It is integral to have a general overview and a hands-on experience of new technologies and design paradigms as they are developed.
+%   Therefore, besides intense article studies, I also keep myself up to date with online classes.
+% }
 
-
-\cvmetaevent
-{Online Classes}
-{}
-{}
-{It is important for me to stay up to date with the newest topics in the field of IT. In DevOps it is also important to have a general overview and a hands-on experience on them. Therefore, besides intense article studies, I also keep myself up to date with online classes.}
-
-\vfill
-\cvqrcode{0.7}
-
-\newpage
-\mbox{} % hotfix to place qrcode on the bottom when there are not other elements
-\vfill
-\cvqrcode{0.7}
+% \vfill\null
+% \mbox{} % place qrcode on the bottom when there are not other elements
+% \cvqrcode{0.7}
+% \vfill
 
 \end{leftcolumn}
 \begin{rightcolumn}
@@ -463,9 +480,9 @@ This numerical approach was highly optimised for cluster computing and implement
 %----------------------------------------------------------------------------------------
 \fcolorbox{white}{darkcol}{\begin{minipage}[c][3.5cm][c]{1\mpwidth}
 	\begin {center}
-		\HUGE{ \textbf{ \textcolor{white}{ \uppercase{ ILYA RUMYANTSEV } } } } \\[-24pt]
+		\HUGE{ \textbf{ \textcolor{white}{ \uppercase{ MATT FORSTER } } } } \\[-24pt]
 		\textcolor{white}{ \rule{0.1\textwidth}{1.25pt} } \\[4pt]
-		\large{ \textcolor{white} {Freelance Automation  Consultant and Developer} }
+		\large{ \textcolor{white} {solving problems, creating, building foundations} }
 	\end {center}
 \end{minipage}} \\[14pt]
 \vspace{-12pt}
@@ -476,12 +493,11 @@ This numerical approach was highly optimised for cluster computing and implement
 \vfill\null
 \cvsection{PROFILE}
 
-\cvtext{IT Consultant with strong theoretical skills and a passion for OpenSource sofware.\\
+\cvtext{
+  Technical Leader, Software Engineer, DevOps and Cloud Operations. Continually caring about the value, reliability, and consistency of the services my teams and I create.\\
 
-DevOps Engineer, specialized both in automation and in custom application development, experienced with large projects and heterogeneous infrastructures. The link between development and operations, comfortable in both.\\
-
-Customer-oriented and structured method of working, focused on quality and maintainability. Highly motivated to work in a team, both comfortable in big companies as in small teams.\\
-
+  I chase excellence in application development (web and native), user experience (with a focus on platform experiences through CLI and APIs),
+  software quality improvements, infrastructure automation, database administration, and other development projects that allow me to use my creativity to solve problems and help people.\\
 }
 
 %---------------------------------------------------------------------------------------
@@ -491,156 +507,89 @@ Customer-oriented and structured method of working, focused on quality and maint
 \cvsection{WORK EXPERIENCE}
 
 \cvevent
-	{Sep 15 - NOW}
-	{DevOps/FullStack developer}
-	{Research and Development}
-	{A large IAM project required an intuitive interface for role-based access and rights management. At the same time, new workfows for role based access, life time and monitoring had to be established}
-	{\cvlist{
-		\item Creation of a web portal for role- and rights management
-		\item Establishing a connection to the existing MicroFocus role solution
-		\item Development of new role-based workfows and processes, as well as training and support
-		\item Maintenance of existing infrastructure
-	}}
-	{\cvlist {
-		\item Django for the roles- and rights management tool backend (backend is a REST interface)
-		\item Angular for the easy frontend interaction
-		\item HTML5/CSS3/Bootstrap3 for the frontend
-		\item Ansible + Docker for 1-click deployments
+	{March 2022 - Now}
+	{Software Architect }
+	{Quorum Information Technologies }
+	{
+    As one of the software architects at quorum, my team and I are building the infrastructure and development community that will guide the company into the future.
+    With Quorum's recent acquisitions, our job is to bring these teams and software stacks together and create a cohesive platform and product suite.
+  }
+  {\cvlist{
+    \item Re-engineered the RabbitMQ client libraries to use asynchronous streams and channel pools to reduce message sizes and channel churn, improving memory efficiency by 60\% and reducing server instability under high loads.
+		\item Started the change of communication and contribution culture within new teams, improving and encouraging the writing of the engineering organization and building a positive and inclusive contribution community.
 	}}
 	{\cvlist{
-		\item A web based tool for an intuitive role assignment and administration
-		\item Online overview of company structures, projects, etc
-		\item Tools for role review, reporting and troubleshooting
+    \item Guide technical decisions and discussions
+		\item Judge technical proposals and provide critical feedback, using modern code review processes
+		\item Lead feature creation, development efforts, and deployment by writing code
+		\item Mentor and coach members of a technical leadership team
+		\item Host Architecture Chapter meetups, technical training, and other events
+    \item Shape and bet on roadmaps and projects that multiple teams will work on
+    \item Lead, encourage, and evolve collaborative culture and code review practices
 	}}
-
+  {}
 \vfill\null
-\cvevent
-	{Jan 15 - Sep 15}
-	{DevOps engineer}
-	{Research and Development}
-	{Responsible for infrastructure architecture with regard on the future development and tool selection in the field of identity and access management}
-	{\cvlist{
-		\item Selection of future-proof tools for a large infrastructure
-		\item Infrastructure migration into a cloudstack cloud
-		\item Quality assurance in terms of documentation
-		\item Tool development for infrastructure overview
-		\item Development of Ansible modules for client
-	}}
-	{\cvlist {
-		\item Python for custom tool development
-		\item Ansible for infrastructure migration and cloud configuration
-		\item SLES12
-		\item Django for Visualization
-	}}
-	{\cvlist{
-		\item Ansible module for SLES12 System + Package registration
-		\item Python tool for ACL-administration in cloud
-		\item Fully automated migration of old systems into cloud with Ansible playbooks/roles
-		\item Django tool on LDAP - Schema Review
-	}}
+% \newpage
 
+\cvevent
+	{2016 - March 2022}
+	{Development Team Lead - Server Applications and API Infrastructure, DevOps }
+	{Autovance Technologies / Quorum Information Technologies }
+	{
+    Leading, growing, and working with a small team to ensure results, reliability and speed. My team and I planned and executed on a highly available API platform serving multiple
+    applications and services.
+  }
+  {\cvlist{
+    \item Grew a sucessful development team from 2 to 8 members, with high pyschological safety and a strong sense of responsibility
+		\item Soundly architected the Autovance Platform for security, performance and longevity
+		\item Team aquired by Quorum in the summer of 2017, \\ https://quoruminformationsystems.com/2017/08/22/2366/
+	}}
+	{\cvlist{
+		\item Lead feature creation, development efforts, and deployment by writing code
+		\item Judge technical proposals and provide critical feedback, using modern code review processes
+		\item Mentor and coach members of development team
+		\item Host technical one on ones, gather input and feedback for the technical roadmaps
+    \item Shape and bet on projects that the team will work on (sprint planning)
+    \item Lead, encourage, and evolve collaborative culture and code review practices
+	}}
+  {}
+	% {\cvlist{
+	% 	\item Trello - design and implementation of agile software development processes for entire development team
+	% 	\item Github \& Git - collaboration and version control
+	% 	\item NodeJS \& Typescript - server side development
+	% 	\item CircleCI - Continuous integration and deployment
+	% }}
 \vfill\null
-\cvevent
-	{Mar 14 - Jan 15}
-	{Systems Analyst}
-	{Research and Development}
-	{Responsible for infrastructure architecture / automaton as well as custom tool development on a project for directory services and identity / access management in a large heterogeneous environment.}
-	{\cvlist{
-		\item Design and implementation of update and deployment process automaton
-		\item Quality assurance by design of infrastructure monitoring, centralized logging solutions and documentation
-		\item Customized tool creation for ldap operations
-		\item Installation and maintenance of single sign on solutions
-		\item Customer support in ldap / infrastructural / programming concerns
-	}}
-	{\cvlist {
-		\item Ansible for infrastructure automaton and configuration management
-		\item Python for custom Tool development
-		\item nxLog + rsyslog + graylog for logging infrastructure
-		\item NOVELL eDirectory
-		\item Shibboleth as identity Provider combined with ldap
-		\item SLES11
-		\item Git for configuration and documentation versioning
-	}}
-	{\cvlist{
-		\item Drastically accelerated (~20x faster) the update process and improved its reliability by introduction of centralized configuration management
-		\item Extended the python-ldap library with interfaces for simplified access and modification of LDAP-Objects and searches
-		\item  Introduction of a complete and reliable centralized logging solution including log filtering and alerting for both windows and Linux systems
-	}}
+% \newpage
 
+\cvevent
+	{2014 - 2016}
+	{Javascript / NodeJS API Development \& DevOps (Team Founder)}
+	{Autovance Technologies}
+	{
+    API Engineer, using modern Javascript and Web paradigms to deliver performant and reliable APIs.\\
+    Founding member of the Autovance Development organization, I was responsible for the foundational
+    initial development, growth, and maintenance of the API platform powering the Autovance Products.
+  }
+  {\cvlist{
+		\item Creation of a REST API platform powering Autovance Admin and Desk
+		\item Full-fledged data management platform that allowed a small number of people to manage large amounts of data
+		\item Planning and execution for the future of the platform
+	}}
+	{\cvlist{
+		\item Lead feature creation, development efforts, and deployment by writing code
+		\item Ensure development efforts made by team members are successful
+		\item Create and maintain culture around collaboration and improvement
+	}}
+  {}
+	% {\cvlist {
+	% 	\item NodeJS REST APIs
+	% 	\item AWS, Compose, Heroku and Docker as infrastructure tools
+	% 	\item Fully automated CI/CD pipelines and continuous integration
+	% }}
 \vfill\null
-\cvevent
-	{Sep 13 - Mar 14}
-	{Systems Analyst}
-	{Tourism industry}
-	{Responsible for data transformation and tool customization on a migration (legacy c++ code from Solaris to Linux systems) project. The tasks include}
-	{\cvlist{
-		\item Tool development for identification of critical spots in code
-		\item Legacy code analysis
-		\item Quality assurance
-		\item Department-wide training in python
-		\item Consulting in topics of migration to Git
-	}}
-	{\cvlist {
-		\item Python
-		\item Git
-		\item Linux (Debian)
-	}}
-	{\cvlist{
-		\item Implementing code coverage and dynamic code checker for c++ legacy source code based on gcov
-		\item Introduction of Python + Environment in project
-	}}
 
-\vfill\null
-\cvevent
-	{Oct 12 - Sep 13}
-	{Systems Analyst}
-	{Tourism industry}
-	{Responsible for the infrastructure including performance and quality assurance on a large social media project.}
-	{\cvlist{
-		\item Organization and care of a cloud network (Debian systems)
-		\item Support for software developers
-		\item Configuration of open source tools for code quality and documentation
-		\item Implementation of performance checks
-		\item Implementation of automated reports on code quality and performance
-	}}
-	{\cvlist {
-		\item Python + Django for tool development
-		\item Sonar as static and dynamic tool for code analysis
-		\item OpenLDAP for user rights management
-		\item JIRA as the issue tracking/SCRUM tool
-	}}
-	{\cvlist{
-		\item Customized wiki and documentation application for developers with Jenkins and Git integration
-		\item Django web application to test the product performance using selenium tests in background with customizable tests / test
-environments ad a graphical evaluation using the jqPlot library (also Jaiascript / jQuery)
-		\item Improvement of the overall code quality by raising test coverage (+ \~30\%) and identification + elimination of potential code flaws
-	}}
-
-\vfill\null
-\cvevent
-	{Oct 11 - Oct 12}
-	{IT Consultant}
-	{Accenture Tech. Solutions}
-	{Large public service project with the goal to establish a platform for handling of finance processes with a very high number of transactions. Main focus was the migration of legacy data, by assuring data quality and transformation into various formats}
-	{\cvlist{
-		\item Customer consulting with regard to loading / unloading interfaces
-		\item Definition of requirements for transformation of legacy data
-		\item Implementation of algorithms for data transformation
-		\item Tool development for secure data transport
-		\item Tool development for tests of data quality/interface implementation
-	}}
-	{\cvlist {
-		\item Standard Linux tools, such as awk, sed, grep, ...
-		\item Python for in-depth data analysis
-		\item Java for transport layers
-		\item IBM DataStage
-	}}
-	{\cvlist{
-		\item Definition of uniform standards
-		\item Introduction of the standard Linux stack as global toolset for data analysis in project
-	}}
-
-% hotfixes to create fake-space to ensure the whole height is used
+% create fake-space to ensure the whole height is used
 \mbox{}
 \vfill
 \mbox{}
@@ -651,4 +600,3 @@ environments ad a graphical evaluation using the jqPlot library (also Jaiascript
 \end{rightcolumn}
 \end{paracol}
 \end{document}
-
