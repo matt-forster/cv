@@ -5,15 +5,13 @@
 </h1>
 
 <div align="center">
-  <a href="https://travis-ci.org/jankapunkt/latexcv" title="Build Status">
-    <img src="https://travis-ci.org/jankapunkt/latexcv.svg?branch=master" alt="Build Status" />
+  <a href="https://github.com/jankapunkt/latexcv/actions/workflows/buildall.yml">
+    <img alt="buildall workflow status" src="https://github.com/jankapunkt/latexcv/actions/workflows/buildall.yml/badge.svg">
   </a>
   <a href="http://www.repostatus.org/#active" title="Project Status: Active – The project has reached a stable, usable state and is being actively developed.">
     <img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active" />
   </a>
-  <a href="https://gitlicense.com/license/jankapunkt/latexcv">
-    <img src="https://gitlicense.com/badge/jankapunkt/latexcv" alt="GitLicense" />
-  </a>	
+  <img alt="license badge" src="https://img.shields.io/github/license/jankapunkt/latexcv">
 </div>
 
 <br />
@@ -108,6 +106,41 @@ You need a minimal tex-live distribution to compile the templates. No XeTeX or L
 
 ## How to build?
 
+### Using Docker
+
+We now have a Dockerfile you can use to build your latex environment. 
+For this you need to have Docker installed on your system.
+
+Get Docker: https://docs.docker.com/get-docker/
+
+We provide scripts for building the image and running the containers, 
+so you should fine by simply running the `build.sh` script:
+
+```shell
+$ .docker/create_image.sh
+```
+
+You should now be able to build CVs simply by providing the folder name:
+
+```shell
+$ .docker/build.sh classic
+```
+
+Constraints: You need to be in the top-level folder of this project and the image has been created (see prior step).
+
+You can also run a daemon and pass through build commands, suitable if you build many times in sequence:
+
+```shell
+$ .docker/daemon.sh
+$ .docker/dbuild.sh classic
+$ .docker/dbuild.sh modern
+$ # ... and so on
+```
+
+This has originally been implemented by https://github.com/blang/latex-docker/tree/master
+
+### Manual build
+
 The following guide just briefly describes the requirements and build procedure as there are many ways to install a LaTeX distribution on various OS. Please create an issue, if this part is not helpful.
 
 **Build Requirements**
@@ -135,12 +168,17 @@ This repo also contains a `texlive.profile` file in the project root, that can b
 
 **Contributors are very welcome**. You want to contribute? Awesome! Please check the [contribution guidelines](https://github.com/jankapunkt/latexcv/blob/master/CONTRIBUTING.md) first to make it a success.
 
+## Sponsors
+
+:heart: Thanks a lot to all sponsors of this project, your contribution will help to keep this project going:
+
+- [janemiceli](https://github.com/janemiceli)
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2014-2019 Jan Küster
+Copyright (c) 2014-2021 Jan Küster
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

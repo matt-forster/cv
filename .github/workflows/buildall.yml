@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: buildall
 
 # Controls when the workflow will run
 on:
@@ -22,23 +22,33 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: texlive texlive-base texlive-latex-extra texlive-fonts-extra
+          version: 1.0
       
       # Cache TexLive dependencies based on texlive.profile file hash
-      - name: cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: |
-            ~/.texlive2021
-            /usr/bin/latex
-            /usr/local/texlive/
-          key: ${{ runner.os }}-texlive-${{ hashFiles('**/texlive.profile') }}
-          restore-keys: |
-            ${{ runner.os }}-texlive-
+      # - name: cache dependencies
+      #  uses: actions/cache@v1
+      #  with:
+      #    path: |
+      #      ~/.texlive2021
+      #      /usr/bin/latex
+      #      /usr/local/texlive/
+      #      /usr/bin/tex
+      #    key: ${{ runner.os }}-texlive-${{ hashFiles('**/texlive.profile') }}
+      #    restore-keys: |
+      #      ${{ runner.os }}-texlive-
+
+      # Cache TexLive dependencies based on texlive.profile file hash
+
+      - name: Update APT-List
+        run: sudo apt-get update
 
       # Runs a single command using the runners shell
       - name: Install tex-live
-        run: ./scripts/install.sh
+        run: sudo apt-get install --fix-missing -y texlive texlive-base texlive-latex-extra texlive-fonts-extra
 
       # Runs a set of commands using the runners shell
       - name: Run build script
