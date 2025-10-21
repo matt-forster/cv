@@ -4,14 +4,6 @@
 
 ### Using Docker
 
-We now have a Dockerfile you can use to build your latex environment. 
-For this you need to have Docker installed on your system.
-
-Get Docker: https://docs.docker.com/get-docker/
-
-We provide scripts for building the image and running the containers, 
-so you should fine by simply running the `build.sh` script:
-
 ```shell
 $ .docker/create_image.sh
 ```
@@ -51,7 +43,6 @@ This repo also contains a `texlive.profile` file in the project root, that can b
 
 
 **Build Procedure**
-
 
  * Clone or download this project. 
  * Change to a template folder, which contains a `main.tex` file do
