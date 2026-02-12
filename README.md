@@ -8,28 +8,15 @@
 $ .docker/create_image.sh
 ```
 
-You should now be able to build CVs simply by providing the folder name:
+You should now be able to build the CV by providing the folder name:
 
 ```shell
-$ .docker/build.sh classic
+$ .docker/build.sh sidebarleft
 ```
 
 Constraints: You need to be in the top-level folder of this project and the image has been created (see prior step).
 
-You can also run a daemon and pass through build commands, suitable if you build many times in sequence:
-
-```shell
-$ .docker/daemon.sh
-$ .docker/dbuild.sh classic
-$ .docker/dbuild.sh modern
-$ # ... and so on
-```
-
-This has originally been implemented by https://github.com/blang/latex-docker/tree/master
-
 ### Manual build
-
-The following guide just briefly describes the requirements and build procedure as there are many ways to install a LaTeX distribution on various OS. Please create an issue, if this part is not helpful.
 
 **Build Requirements**
 
@@ -45,7 +32,7 @@ This repo also contains a `texlive.profile` file in the project root, that can b
 **Build Procedure**
 
  * Clone or download this project. 
- * Change to a template folder, which contains a `main.tex` file do
+ * Change to the `sidebarleft` folder, which contains the `main.tex` file
  * Edit the `main.tex` according to your CV credentials, optionally change settings and colors etc.
- * Run `pdflatex` (build/compile) 
+ * Run `pdflatex main.tex` (build/compile) 
  - The `main.pdf` should show the output.
